@@ -1,4 +1,6 @@
-export class CelestialObject {
+import { DistanceModel } from './distance-model';
+
+export class CelestialModel {
   id: number;
   magnitude: string;
   absoluteMagnitude: string;
@@ -7,4 +9,6 @@ export class CelestialObject {
   designation2: string;
   designation3: string;
   designation4: string;
+  description: string;
+  distances: Array<DistanceModel>;
 }

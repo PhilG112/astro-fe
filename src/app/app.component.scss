@@ -1,9 +1,24 @@
-header {
-  nav {
-    background-color: red;
+@import '../variables.scss';
 
-    ul {
-      font-size: 2em;
+main {
+  height: 80vh;
+}
+
+.navbar {
+  margin-bottom: 17px;
+}
+
+.navbar-nav {
+  .nav-item {
+    border-bottom: 2px solid $secondary;
+
+    .nav-link {
+      font-size: 1.2em;
+      color: $primary;
     }
+  }
+
+  .nav-item:hover {
+    border-bottom: 2px solid $primary;
   }
 }

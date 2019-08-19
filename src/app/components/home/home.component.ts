@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { CelestialObjectService } from '../../services/celestial-object/celestial-object.service';
-import { CelestialObject } from '../../models/celestial-object';
 
 @Component({
   selector: 'app-home',
@@ -8,14 +6,8 @@ import { CelestialObject } from '../../models/celestial-object';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  cObject = new CelestialObject();
 
-  constructor(private cObjectService: CelestialObjectService) { }
+  constructor() { }
 
   ngOnInit() { }
-
-  getCelestialObject() {
-    this.cObjectService.getCelestialObject()
-      .subscribe(c => this.cObject = c);
-  }
 }

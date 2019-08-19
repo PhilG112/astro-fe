@@ -1,17 +1,16 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpResponse } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { CelestialObject } from '../../models/celestial-object';
+import { Observable, from } from 'rxjs';
+import { CelestialModel } from '../../models/celestial-model';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CelestialObjectService {
-  private baseUrl = 'https://localhost:44380'
-
   constructor(private http: HttpClient) { }
 
-  getCelestialObject(): Observable<CelestialObject> {
-    return this.http.get<CelestialObject>(`${this.baseUrl}/celestial/get`);
+  getCelestialObjectById(id:number): Observable<CelestialModel> {
+    return this.http.get<CelestialModel>(`${environment.apiEndpoint}/celestial/${id}`);
   }
 }
