@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CelestialObjectService } from './celestial-object.service';
+import { CelestialService } from './celestial.service';
 
 describe('CelestialObjectService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: CelestialObjectService = TestBed.get(CelestialObjectService);
+    const service: CelestialService = TestBed.get(CelestialService);
     expect(service).toBeTruthy();
   });
 });

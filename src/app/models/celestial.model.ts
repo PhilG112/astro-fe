@@ -1,9 +1,9 @@
-import { DistanceModel } from './distance-model';
+import { DistanceModel } from './distance.model';
 
 export class CelestialModel {
   id: number;
-  magnitude: string;
-  absoluteMagnitude: string;
+  magnitude: number;
+  absoluteMagnitude: number;
   name: string;
   designation1: string;
   designation2: string;
