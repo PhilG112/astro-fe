@@ -1,7 +1,13 @@
 @import '~bootstrap/dist/css/bootstrap.min.css';
+@import 'variables.scss';
 
 * {
   margin: 0;
   padding: 0;
   border: 0;
+}
+
+.btn-primary {
+  background-color: $secondary-dark;
+  border-color: $secondary-dark;
 }

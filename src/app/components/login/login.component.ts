@@ -24,9 +24,4 @@ export class LoginComponent {
     this.authService.login(user)
       .subscribe();
   }
-
-  logOut() {
-    localStorage.removeItem("jwt");
-  }
-
 }
