@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 import { AuthenticationService } from 'src/app/services/authentication/authentication.service';
 import { UserModel } from 'src/app/models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +15,10 @@ export class LoginComponent {
     password: []
   });
 
-  constructor(private authService: AuthenticationService, private fb: FormBuilder) { }
+  constructor(
+    private authService:AuthenticationService,
+    private fb: FormBuilder,
+    private router: Router) { }
 
   onSubmit() {
     let user = new UserModel();
@@ -23,5 +27,9 @@ export class LoginComponent {
 
     this.authService.login(user)
       .subscribe();
+
+    if (this.authService.isAuthenticated) {
+      this.router.navigate(['/dashboard'])
+    }
   }
 }

@@ -11,6 +11,7 @@ import { LoginComponent } from './components/login/login.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { ErrorInterceptor } from './helpers/error.interceptor';
 import { GalleryComponent } from './components/gallery/gallery.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GalleryComponent } from './components/gallery/gallery.component';
     HomeComponent,
     AboutComponent,
     LoginComponent,
-    GalleryComponent
+    GalleryComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
