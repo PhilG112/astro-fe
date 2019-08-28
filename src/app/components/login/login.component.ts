@@ -26,10 +26,10 @@ export class LoginComponent {
     user.password = this.loginForm.value['password'];
 
     this.authService.login(user)
-      .subscribe();
-
-    if (this.authService.isAuthenticated) {
-      this.router.navigate(['/dashboard'])
-    }
+      .subscribe(_ => {
+        if (this.authService.isAuthenticated()) {
+          this.router.navigate(['dashboard'])
+        }
+      });
   }
 }
