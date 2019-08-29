@@ -1,15 +1,13 @@
 import { Injectable } from '@angular/core';
-import { UserModel } from 'src/app/models/user.model';
+import { UserModel } from 'src/app/shared/models/user.model';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map, tap } from 'rxjs/operators';
 
-import { environment } from '../../../environments/environment';
-import { LoginResponseModel } from 'src/app/models/loginresponse.model';
+import { environment } from '../../../../environments/environment';
+import { LoginResponseModel } from 'src/app/shared/models/login-response.model';
 import { of, Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
