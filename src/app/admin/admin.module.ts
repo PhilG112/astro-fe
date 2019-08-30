@@ -1,8 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminRoutingModule } from './admin-routing.module';
+import { AdminComponent } from './admin.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   imports: [
@@ -10,10 +11,10 @@ import { AdminRoutingModule } from './admin-routing.module';
     AdminRoutingModule
   ],
   declarations: [
-    DashboardComponent
+    AdminComponent,
+    UploadComponent
   ],
   exports: [
-    DashboardComponent
   ]
 })
 export class AdminModule { }

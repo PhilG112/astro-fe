@@ -28,7 +28,7 @@ export class LoginComponent {
     this.authService.login(user)
       .subscribe(_ => {
         if (this.authService.isAuthenticated()) {
-          this.router.navigate(['dashboard'])
+          this.router.navigate(['admin'])
         }
       });
   }
