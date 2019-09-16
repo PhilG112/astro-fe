@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-admin',
@@ -8,7 +9,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 export class AdminComponent implements OnInit, OnDestroy {
   private element = <HTMLElement>document.getElementsByClassName('navbar')[0];
 
-  constructor() {
+  constructor(private location: Location) {
   }
 
   ngOnInit(): void {
@@ -17,6 +18,10 @@ export class AdminComponent implements OnInit, OnDestroy {
 
   ngOnDestroy(): void {
     this.element.style.display = 'block';
+  }
+
+  goBack(): void {
+    this.location.back();
   }
 }
 
