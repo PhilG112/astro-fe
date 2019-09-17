@@ -16,7 +16,6 @@ export class AuthenticationService {
     return this.http.post<LoginResponseModel>(`${environment.apiEndpoint}/login`, user)
       .pipe(
         map(response => {
-          console.log(response);
           localStorage.setItem("jwt", response.token);
           return response;
         })
