@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-blob-form',
@@ -6,8 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: []
 })
 
-export class BlobComponent implements OnInit {
-  constructor() { }
+export class BlobComponent {
+  photoForm = this.fb.group({
+    photo: []
+  });
 
-  ngOnInit() { }
+  constructor(private fb: FormBuilder) { }
+
+  onSubmit() {
+    console.log(this.photoForm.value["photo"]);
+  }
 }

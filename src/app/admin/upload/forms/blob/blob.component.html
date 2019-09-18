@@ -1,1 +1,9 @@
 <h3>Blob Form</h3>
+<form [formGroup]="photoForm" (ngSubmit)="onSubmit()">
+  <label>
+    Photo:
+    <input type="file" formControlName="photo" multiple>
+  </label>
+
+  <button type="submit">Submit</button>
+</form>

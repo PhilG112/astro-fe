@@ -7,11 +7,13 @@ import { UploadComponent } from './upload/upload.component';
 import { InstagramComponent } from './upload/forms/instagram/instagram.component';
 import { BlobComponent } from './upload/forms/blob/blob.component';
 import { FlickrComponent } from './upload/forms/flickr/flickr.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    ReactiveFormsModule
   ],
   declarations: [
     AdminComponent,
