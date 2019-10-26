@@ -20,7 +20,6 @@ export class BlobComponent {
   constructor(private fb: FormBuilder, private uploadService: UploadService) { }
 
   onFileChanged(event: any) {
-    console.log("DING");
     this.files = event.target.files;
   }
 
