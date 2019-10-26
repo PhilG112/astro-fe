@@ -17,7 +17,9 @@ export class BlobComponent {
 
   public files: any[];
 
-  constructor(private fb: FormBuilder, private uploadService: UploadService) { }
+  constructor(
+    private fb: FormBuilder,
+    private uploadService: UploadService) { }
 
   onFileChanged(event: any) {
     this.files = event.target.files;
