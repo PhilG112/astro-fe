@@ -14,7 +14,8 @@ import {
 import {
   CelestialService,
   JwtService,
-  AuthenticationService
+  AuthenticationService,
+  UploadService
 } from './services';
 
 
@@ -28,7 +29,8 @@ import {
     AuthGuard,
     CelestialService,
     JwtService,
-    AuthenticationService
+    AuthenticationService,
+    UploadService
   ],
   declarations: []
 })

@@ -2,7 +2,12 @@
 <form [formGroup]="photoForm" (ngSubmit)="onSubmit()">
   <label>
     Photo:
-    <input type="file" formControlName="photo" multiple>
+    <input type="file" writeFile="true" formControlName="photos" multiple (change)="onFileChanged($event)">
+  </label>
+
+  <label>
+    Description:
+    <input type="text" formControlName="description" >
   </label>
 
   <button type="submit">Submit</button>

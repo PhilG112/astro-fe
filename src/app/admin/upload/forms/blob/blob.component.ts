@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormArray, Validators } from '@angular/forms';
+import { FileUploadModel } from '../../../../shared/models/file-upload.model'
+import { UploadService } from 'src/app/core/services';
 
 @Component({
   selector: 'app-blob-form',
@@ -9,12 +11,24 @@ import { FormBuilder, Validators } from '@angular/forms';
 
 export class BlobComponent {
   photoForm = this.fb.group({
-    photo: []
+    photos: [],
+    description: []
   });
 
-  constructor(private fb: FormBuilder) { }
+  public files: any[];
+
+  constructor(private fb: FormBuilder, private uploadService: UploadService) { }
+
+  onFileChanged(event: any) {
+    console.log("DING");
+    this.files = event.target.files;
+  }
 
   onSubmit() {
-    console.log(this.photoForm.value["photo"]);
+    let m = new FileUploadModel();
+    m.formFiles = this.files;
+    m.description = this.photoForm.value["description"];
+
+    this.uploadService.uploadFileToBlob(m).subscribe();
   }
 }
