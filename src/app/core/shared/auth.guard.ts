@@ -9,9 +9,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     private authService: AuthenticationService
   ) { }
 
-  canActivate(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     let canAccess = this.authService.isAuthenticated();
 
     if (canAccess) {
@@ -23,9 +21,7 @@ export class AuthGuard implements CanActivate, CanActivateChild {
     return false;
   }
 
-  canActivateChild(
-    route: ActivatedRouteSnapshot,
-    state: RouterStateSnapshot): boolean {
+  canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
     return this.canActivate(route, state);
   }
 
